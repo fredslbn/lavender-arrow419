@@ -15,3 +15,6 @@ task:
     - git checkout v0.9.5
     - git rev-list --count HEAD
     - cd ..
+
+  Build_script:
+      - bash clanglinaro.sh
