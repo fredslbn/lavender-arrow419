@@ -1500,12 +1500,6 @@ struct task_struct {
 	/* Used by LSM modules for access restriction: */
 	void				*security;
 #endif
-
-#ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
-	u64 android_kabi_reserved3;
-	u64 android_kabi_reserved4;
-#endif // #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
-
 	/* task is frozen/stopped (used by the cgroup freezer) */
 	ANDROID_KABI_USE(1, unsigned frozen:1);
 
@@ -1519,8 +1513,8 @@ struct task_struct {
 	 * Do the GENKSYMS hack to work around the CRC issues
 	 */
 #ifdef __GENKSYMS__
-	//ANDROID_KABI_RESERVE(3);
-	//ANDROID_KABI_RESERVE(4);
+	ANDROID_KABI_RESERVE(3);
+	ANDROID_KABI_RESERVE(4);
 	ANDROID_KABI_RESERVE(5);
 	ANDROID_KABI_RESERVE(6);
 #else

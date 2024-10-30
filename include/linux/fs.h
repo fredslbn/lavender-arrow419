@@ -722,7 +722,10 @@ struct inode {
 #endif
 
 	void			*i_private; /* fs or device private pointer */
-
+#ifdef CONFIG_KSU_SUSFS_SUS_KSTAT
+	u64 android_kabi_reserved3;
+	u64 android_kabi_reserved4;
+#endif
 	ANDROID_KABI_RESERVE(1);
 	ANDROID_KABI_RESERVE(2);
 } __randomize_layout;
